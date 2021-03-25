@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ElephantsProject
 {
@@ -7,10 +6,10 @@ namespace ElephantsProject
     {
         List<Elephant> GetElephants();
 
-        Elephant GetElephant(Guid id);
+        //Elephant GetElephant(Guid id);
 
-        Elephant AddElephent();
+        //Elephant AddElephent();
 
-        Elephant DeleteElephant(Guid id);
+        //Elephant DeleteElephant(Guid id);
     }
 }

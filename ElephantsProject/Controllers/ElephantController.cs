@@ -1,9 +1,33 @@
-﻿namespace ElephantsProject.Controllers
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
+
+namespace ElephantsProject.Controllers
 {
-    public class ElephantController
+    [ApiController]
+    [Route("[controller]")]
+
+    public class ElephantController : ControllerBase
     {
-        public ElephantController()
+        private IElephantService _elephantService;
+
+        public ElephantController(IElephantService elephantService)
         {
+            _elephantService = elephantService;
+        }
+
+        
+        [HttpGet]
+        [Route("greeting")]
+        public string Get()
+        {
+          return "Hello Elephants";
+        }
+
+
+        [HttpGet]
+        public List<Elephant> GetAllElephants()
+        {
+          return _elephantService.GetElephants();
         }
     }
 }

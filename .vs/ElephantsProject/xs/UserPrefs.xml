@@ -2,15 +2,17 @@
   <MonoDevelop.Ide.ItemProperties.ElephantsProject PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ElephantsProject/Controllers/ElephantController.cs">
     <Files>
-      <File FileName="ElephantsProject/ElephantService.cs" Line="17" Column="1" />
-      <File FileName="ElephantsProject/Elephant.cs" Line="1" Column="1" />
-      <File FileName="ElephantsProject/ElephantController.cs" Line="1" Column="1" />
+      <File FileName="ElephantsProject/Controllers/ElephantController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ElephantsProject" expanded="True">
-            <Node name="ElephantsProject" expanded="True" />
+            <Node name="ElephantsProject" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="ElephantController.cs" selected="True" />
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>

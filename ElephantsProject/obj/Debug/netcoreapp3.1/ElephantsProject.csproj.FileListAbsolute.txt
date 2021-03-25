@@ -18,3 +18,5 @@
 /Users/melissaastbury/Documents/Study/Apprenticeship/CSharp/ElephantsProject/ElephantsProject/obj/Debug/netcoreapp3.1/ElephantsProject.dll
 /Users/melissaastbury/Documents/Study/Apprenticeship/CSharp/ElephantsProject/ElephantsProject/obj/Debug/netcoreapp3.1/ElephantsProject.pdb
 /Users/melissaastbury/Documents/Study/Apprenticeship/CSharp/ElephantsProject/ElephantsProject/obj/Debug/netcoreapp3.1/ElephantsProject.genruntimeconfig.cache
+/Users/melissaastbury/Documents/Study/Apprenticeship/CSharp/ElephantsProject/ElephantsProject/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
+/Users/melissaastbury/Documents/Study/Apprenticeship/CSharp/ElephantsProject/ElephantsProject/obj/Debug/netcoreapp3.1/ElephantsProject.csproj.CopyComplete
