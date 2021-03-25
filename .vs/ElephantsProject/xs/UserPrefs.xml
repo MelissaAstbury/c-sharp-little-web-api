@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{34745B3E-B2F9-4E3C-AF45-C48F908C1AFF}|Default">
+  <MonoDevelop.Ide.ItemProperties.ElephantsProject FirstBuild="True" PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ElephantsProject/Elephants.json">
+    <Files>
+      <File FileName="ElephantsProject/Elephants.json" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ElephantsProject" expanded="True">
+            <Node name="ElephantsProject" expanded="True">
+              <Node name="Elephants.json" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../../../../CSharp/c-sharp-katas/Katas/KatasProject/Katas.cs" line="14" column="21" endLine="14" endColumn="24" offsetX="-1" offsetY="-1" expression="Katas.Models.Animal" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
