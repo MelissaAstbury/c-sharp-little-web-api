@@ -39,6 +39,11 @@ namespace ElephantsProject.Controllers
         }
 
 
-       
+        [HttpPost]
+        public Elephant AddNewElephant(Elephant elephant)
+        {
+            return _elephantService.AddElephant(elephant);
+        }
+
     }
 }

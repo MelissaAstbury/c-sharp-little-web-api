@@ -1,4 +1,6 @@
-﻿namespace ElephantsProject
+﻿using System;
+
+namespace ElephantsProject
 {
     public class Elephant
     {

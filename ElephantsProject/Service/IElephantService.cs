@@ -8,7 +8,7 @@ namespace ElephantsProject
 
         Elephant GetElephant(string id);
 
-        //Elephant AddElephent(Elephant elephant);
+        Elephant AddElephant(Elephant elephant);
 
         //Elephant DeleteElephant(Guid id);
     }
