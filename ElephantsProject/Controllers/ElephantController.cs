@@ -29,5 +29,16 @@ namespace ElephantsProject.Controllers
         {
           return _elephantService.GetElephants();
         }
+
+
+        [HttpGet]
+        [Route("{id}")]
+        public Elephant GetElephantById(string id)
+        {
+            return _elephantService.GetElephant(id);
+        }
+
+
+       
     }
 }

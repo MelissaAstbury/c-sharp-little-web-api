@@ -1,19 +1,26 @@
 ﻿<Properties StartupConfiguration="{34745B3E-B2F9-4E3C-AF45-C48F908C1AFF}|Default">
   <MonoDevelop.Ide.ItemProperties.ElephantsProject PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ElephantsProject/Controllers/ElephantController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ElephantsProject/ElephantService.cs">
     <Files>
-      <File FileName="ElephantsProject/Controllers/ElephantController.cs" Line="1" Column="1" />
+      <File FileName="ElephantsProject/ElephantService.cs" Line="19" Column="1" />
+      <File FileName="ElephantsProject/IElephantService.cs" Line="11" Column="47" NotebookId="1" />
+      <File FileName="ElephantsProject/Elephants.json" Line="13" Column="48" NotebookId="1" />
+      <File FileName="ElephantsProject/Controllers/ElephantController.cs" Line="45" Column="59" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ElephantsProject" expanded="True">
             <Node name="ElephantsProject" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="ElephantController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="ElephantService.cs" selected="True" />
             </Node>
           </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>elephant</Value>
         </State>
       </Pad>
     </Pads>

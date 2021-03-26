@@ -6,9 +6,9 @@ namespace ElephantsProject
     {
         List<Elephant> GetElephants();
 
-        //Elephant GetElephant(Guid id);
+        Elephant GetElephant(string id);
 
-        //Elephant AddElephent();
+        //Elephant AddElephent(Elephant elephant);
 
         //Elephant DeleteElephant(Guid id);
     }
