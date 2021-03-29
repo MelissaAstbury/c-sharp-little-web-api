@@ -13,4 +13,10 @@ namespace ElephantsProject
         public string wikilink { get; set; }
         public string note { get; set; }
     }
+
+    public class StatusCodesResponse
+    {
+        public int StatusCode { get; set; }
+        public Elephant elephant { get; set; }
+    }
 }

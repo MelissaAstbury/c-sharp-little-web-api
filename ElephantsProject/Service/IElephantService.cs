@@ -10,6 +10,6 @@ namespace ElephantsProject
 
         Elephant AddElephant(Elephant elephant);
 
-        //Elephant DeleteElephant(Guid id);
+        Elephant DeleteElephant(string id);
     }
 }

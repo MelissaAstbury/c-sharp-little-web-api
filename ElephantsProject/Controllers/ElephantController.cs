@@ -1,5 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+//using System.Web.HttpException;
+//using Microsoft.EntityFrameworkCore;
 
 namespace ElephantsProject.Controllers
 {
@@ -15,7 +19,7 @@ namespace ElephantsProject.Controllers
             _elephantService = elephantService;
         }
 
-        
+
         [HttpGet]
         [Route("greeting")]
         public string Get()
@@ -33,9 +37,24 @@ namespace ElephantsProject.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public Elephant GetElephantById(string id)
+        public ActionResult<Elephant> GetElephantById(string id)
         {
-            return _elephantService.GetElephant(id);
+            if (id == "1")
+            {
+                return NotFound();
+            }
+            try
+            {
+               return Ok(_elephantService.GetElephant(id));
+            }
+            catch(Exception e)
+            {
+                //if (elephant == null)
+                //{
+                    //throw new HttpException(404, "Elephant not found");
+                    return null;
+                //} 
+            }
         }
 
 
@@ -45,5 +64,12 @@ namespace ElephantsProject.Controllers
             return _elephantService.AddElephant(elephant);
         }
 
+
+        [HttpDelete]
+        [Route("{id}")]
+        public Elephant DeleteElephantById(string id)
+        {
+            return _elephantService.DeleteElephant(id);
+        }
     }
 }
