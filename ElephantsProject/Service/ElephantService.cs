@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
-//using System.Web.HttpException;
 
 
 namespace ElephantsProject
@@ -30,18 +28,12 @@ namespace ElephantsProject
             Elephant elephant = listOfElephants.First(e => e.id == id);
             
             return elephant;
-
-            //throw new HttpException(404, "Elephant not found", e);
-            //return new StatusCodesResponse() { elephant = elephant, StatusCode = 404 };
-            //return new StatusCodesResponse() { StatusCode = 404 };
-            //return HttpContext.Current.Response.StatusCode = 404;
-            //return null;
-
         }
 
 
         public Elephant AddElephant(Elephant elephant)
         {
+            elephant.id = Guid.NewGuid().ToString();
             listOfElephants.Add(elephant);
             return elephant;
         }

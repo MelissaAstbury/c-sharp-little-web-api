@@ -25,7 +25,7 @@ namespace ElephantsProject.Controllers
         public string Get()
         {
             DateTime timeStamp = DateTime.Now;
-            return timeStamp  + " Hello Elephants";
+            return $"{timeStamp} Hello Elephants";
         }
 
 
