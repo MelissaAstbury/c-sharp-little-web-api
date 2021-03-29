@@ -40,29 +40,32 @@ namespace ElephantsProject.Controllers
         [Route("{id}")]
         public ActionResult<Elephant> GetElephantById(string id)
         {
-            if (id == "1")
-            {
-                return NotFound();
-            }
             try
             {
                return Ok(_elephantService.GetElephant(id));
             }
-            catch(Exception e)
+            catch(Exception)
             {
-                //if (elephant == null)
-                //{
-                    //throw new HttpException(404, "Elephant not found");
-                    return null;
-                //} 
+                return NotFound();
             }
         }
 
 
         [HttpPost]
-        public Elephant AddNewElephant(Elephant elephant)
+        public ActionResult<Elephant> AddNewElephant(Elephant elephant)
         {
-            return _elephantService.AddElephant(elephant);
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    return _elephantService.AddElephant(elephant);
+                }
+                return BadRequest("Model is not valid");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
 
 
