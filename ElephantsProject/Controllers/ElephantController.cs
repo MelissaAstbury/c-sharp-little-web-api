@@ -71,9 +71,16 @@ namespace ElephantsProject.Controllers
 
         [HttpDelete]
         [Route("{id}")]
-        public Elephant DeleteElephantById(string id)
+        public ActionResult<Elephant> DeleteElephantById(string id)
         {
-            return _elephantService.DeleteElephant(id);
+            try
+            {
+                return Ok(_elephantService.DeleteElephant(id));
+            }
+            catch (Exception)
+            {
+                return NotFound();
+            }
         }
     }
 }
