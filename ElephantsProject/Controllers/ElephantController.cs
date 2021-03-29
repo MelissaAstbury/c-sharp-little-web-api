@@ -24,7 +24,8 @@ namespace ElephantsProject.Controllers
         [Route("greeting")]
         public string Get()
         {
-          return "Hello Elephants";
+            DateTime timeStamp = DateTime.Now;
+            return timeStamp  + " Hello Elephants";
         }
 
 
