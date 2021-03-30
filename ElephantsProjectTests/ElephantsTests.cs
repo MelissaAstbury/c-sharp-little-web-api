@@ -1,5 +1,6 @@
 using System;
 using ElephantsProject;
+using Microsoft.AspNetCore.Mvc;
 using Xunit;
 
 namespace ElephantsTests
@@ -22,6 +23,17 @@ namespace ElephantsTests
 
             // assert
             Assert.Equal(totalElephantsLength, result.Count);
+        }
+
+
+        [Fact]
+        public void ReturnsElephant_WhenElephantIdIsCalled()
+        {
+            var validElephantId = "14f661d3-1d3e-4a83-9cd0-87edb15bbd75";
+
+            var result = _tests.GetElephant(validElephantId);
+
+            Assert.Equal(validElephantId, result.id);
         }
     }
 }
