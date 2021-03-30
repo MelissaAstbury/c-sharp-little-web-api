@@ -17,6 +17,7 @@ namespace ElephantsProject.Controllers
         }
 
         [HttpGet]
+        [Route("all")]
         public async Task<IActionResult> GetAll()
         {
             return Ok(new {
@@ -36,7 +37,7 @@ namespace ElephantsProject.Controllers
 
 
         [HttpGet]
-        [Route("{id}")]
+        [Route("elephant/{id}")]
         public async Task<IActionResult> Get(string id)
         {
             return Ok(await _elephantService.Get(id));
@@ -44,6 +45,7 @@ namespace ElephantsProject.Controllers
 
 
         [HttpPost]
+        [Route("elephant")]
         public async Task<IActionResult> Post(Elephant elephant)
         {
             return Ok(await _elephantService.Add(elephant));
@@ -51,7 +53,7 @@ namespace ElephantsProject.Controllers
 
 
         [HttpDelete]
-        [Route("{id}")]
+        [Route("elephant/{id}")]
         public async Task<IActionResult> Delete(string id)
         {
             return Ok(await _elephantService.Delete(id));

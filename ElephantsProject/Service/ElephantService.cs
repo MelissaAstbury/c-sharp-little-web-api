@@ -20,23 +20,22 @@ namespace ElephantsProject
 
         public async Task<List<Elephant>> GetAll()
         {
-            var result = await _elephantRepo.GetAll();
-            return result;
+            return await _elephantRepo.GetAll();
         }
 
         public async Task<Elephant> Get(string id)
         {
-            throw new NotImplementedException();
+            return await _elephantRepo.Get(id);
         }
 
         public async Task<Elephant> Add(Elephant elephant)
         {
-            throw new NotImplementedException();
+            return await _elephantRepo.Add(elephant);
         }
 
         public async Task<Elephant> Delete(string id)
         {
-            throw new NotImplementedException();
+            return await _elephantRepo.Delete(id);
         }
     }
 }
