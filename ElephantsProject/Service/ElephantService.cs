@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
+using ElephantsProject.Repo;
 using Newtonsoft.Json;
 
 
@@ -9,42 +11,32 @@ namespace ElephantsProject
 {
     public class ElephantService : IElephantService
     {
-        public ElephantService()
+        private IElephantRepo _elephantRepo;
+
+        public ElephantService(IElephantRepo elephantRepo)
         {
-            string elephants = File.ReadAllText("./Elephants.json");
-            listOfElephants = JsonConvert.DeserializeObject<List<Elephant>>(elephants);
+            _elephantRepo = elephantRepo;
         }
 
-        List<Elephant> listOfElephants;
-
-        public List<Elephant> GetElephants()
+        public async Task<List<Elephant>> GetAll()
         {
-            return listOfElephants;
+            var result = await _elephantRepo.GetAll();
+            return result;
         }
 
-
-        public Elephant GetElephant(string id)
+        public async Task<Elephant> Get(string id)
         {
-            Elephant elephant = listOfElephants.First(e => e.id == id);
-            
-            return elephant;
+            throw new NotImplementedException();
         }
 
-
-        public Elephant AddElephant(Elephant elephant)
+        public async Task<Elephant> Add(Elephant elephant)
         {
-            elephant.id = Guid.NewGuid().ToString();
-            listOfElephants.Add(elephant);
-            return elephant;
+            throw new NotImplementedException();
         }
 
-
-        public Elephant DeleteElephant(string id)
+        public async Task<Elephant> Delete(string id)
         {
-            Elephant elephantToRemove = listOfElephants.First(e => e.id == id);
-            listOfElephants.Remove(elephantToRemove);
-            return elephantToRemove;
-
+            throw new NotImplementedException();
         }
     }
 }

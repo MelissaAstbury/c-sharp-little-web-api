@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.AspNetCore.Http;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-//using System.Web.HttpException;
-//using Microsoft.EntityFrameworkCore;
 
 namespace ElephantsProject.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-
+    [Route("api")]
     public class ElephantController : ControllerBase
     {
         private IElephantService _elephantService;
@@ -17,6 +14,15 @@ namespace ElephantsProject.Controllers
         public ElephantController(IElephantService elephantService)
         {
             _elephantService = elephantService;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            return Ok(new {
+                timestamp = DateTime.UtcNow,
+                elephants = await _elephantService.GetAll()
+            });
         }
 
 
@@ -30,57 +36,25 @@ namespace ElephantsProject.Controllers
 
 
         [HttpGet]
-        public List<Elephant> GetAllElephants()
-        {
-          return _elephantService.GetElephants();
-        }
-
-
-        [HttpGet]
         [Route("{id}")]
-        public ActionResult<Elephant> GetElephantById(string id)
+        public async Task<IActionResult> Get(string id)
         {
-            try
-            {
-               return Ok(_elephantService.GetElephant(id));
-            }
-            catch(Exception)
-            {
-                return NotFound();
-            }
+            return Ok(await _elephantService.Get(id));
         }
 
 
         [HttpPost]
-        public ActionResult<Elephant> AddNewElephant(Elephant elephant)
+        public async Task<IActionResult> Post(Elephant elephant)
         {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    return _elephantService.AddElephant(elephant);
-                }
-                return BadRequest("Model is not valid");
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
+            return Ok(await _elephantService.Add(elephant));
         }
 
 
         [HttpDelete]
         [Route("{id}")]
-        public ActionResult<Elephant> DeleteElephantById(string id)
+        public async Task<IActionResult> Delete(string id)
         {
-            try
-            {
-                return Ok(_elephantService.DeleteElephant(id));
-            }
-            catch (Exception)
-            {
-                return NotFound();
-            }
+            return Ok(await _elephantService.Delete(id));
         }
     }
 }

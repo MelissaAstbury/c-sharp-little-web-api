@@ -1,20 +1,26 @@
 ﻿<Properties StartupConfiguration="{34745B3E-B2F9-4E3C-AF45-C48F908C1AFF}|Default">
   <MonoDevelop.Ide.ItemProperties.ElephantsProject PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ElephantsProject/Elephants.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ElephantsProject/Properties/launchSettings.json">
     <Files>
-      <File FileName="ElephantsProject/ElephantService.cs" Line="17" Column="1" />
-      <File FileName="ElephantsProject/Elephant.cs" Line="29" Column="6" />
-      <File FileName="ElephantsProject/Elephants.json" Line="1" Column="1" />
-      <File FileName="ElephantsProject/Controllers/ElephantController.cs" Line="84" Column="10" NotebookId="1" />
-      <File FileName="ElephantsProjectTests/UnitTest1.cs" Line="18" Column="34" NotebookId="1" />
+      <File FileName="ElephantsProject/Controllers/ElephantController.cs" Line="58" Column="29" />
+      <File FileName="ElephantsProject/Service/ElephantService.cs" Line="20" Column="1" />
+      <File FileName="ElephantsProject/Service/IElephantService.cs" Line="17" Column="1" />
+      <File FileName="ElephantsProject/Repo/ElephantRepo.cs" Line="23" Column="1" />
+      <File FileName="ElephantsProjectTests/ElephantsTests.cs" Line="29" Column="10" />
+      <File FileName="ElephantsProject/Properties/launchSettings.json" Line="15" Column="30" />
+      <File FileName="ElephantsProject/Repo/IElephantRepo.cs" Line="9" Column="12" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ElephantsProject" expanded="True">
             <Node name="ElephantsProject" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Properties" expanded="True">
+                <Node name="launchSettings.json" selected="True" />
+              </Node>
+              <Node name="Repo" expanded="True" />
               <Node name="Service" expanded="True" />
-              <Node name="Elephants.json" selected="True" />
             </Node>
             <Node name="ElephantsProjectTests" expanded="True" />
           </Node>
@@ -23,6 +29,17 @@
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State>
           <Value>elephant</Value>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="ElephantsProject" expanded="True">
+            <Node name="ElephantsProjectTests" expanded="True">
+              <Node name="ElephantsTests" expanded="True">
+                <Node name="ElephantTests" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>

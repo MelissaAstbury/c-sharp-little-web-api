@@ -8,6 +8,7 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Service\" />
+    <Folder Include="Repo\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.4">

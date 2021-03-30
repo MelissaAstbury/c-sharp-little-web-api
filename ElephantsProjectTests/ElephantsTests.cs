@@ -1,25 +1,28 @@
 using System;
 using ElephantsProject;
+using ElephantsProject.Repo;
 using Microsoft.AspNetCore.Mvc;
 using Xunit;
+using Moq;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ElephantsTests
-{
-    public class ElephantsProjectTests
-    {
-        internal ElephantService _tests = new ElephantService();
-    }
-
-    public class ElephantTests : ElephantsProjectTests
+{ 
+    public class ElephantTests 
     {
         [Fact]
-        public void LoadsAllElephantsWithExpectedValues()
+        public async Task GetAll_ReturnsNoElephants()
         {
             // arrange 
-            var totalElephantsLength = 25;
+            var totalElephantsLength = 0;
+            var mockElephantRepo = new Mock<IElephantRepo>();
+            mockElephantRepo.Setup(x => x.GetAll()).ReturnsAsync(new List<Elephant>());
+
+            ElephantService _tests = new ElephantService(mockElephantRepo.Object);
 
             // act
-            var result = _tests.GetElephants();
+            var result =  await _tests.GetAll();
 
             // assert
             Assert.Equal(totalElephantsLength, result.Count);
@@ -27,13 +30,24 @@ namespace ElephantsTests
 
 
         [Fact]
-        public void ReturnsElephant_WhenElephantIdIsCalled()
+        public async Task GetAll_ReturnsAllElephants()
         {
-            var validElephantId = "14f661d3-1d3e-4a83-9cd0-87edb15bbd75";
+            // arrange 
+            var totalElephantsLength = 2;
+            var mockElephantRepo = new Mock<IElephantRepo>();
+            mockElephantRepo.Setup(x => x.GetAll()).ReturnsAsync(
+                new List<Elephant>() {
+                    new Elephant() { name = "Bob" },
+                    new Elephant() { name = "Billy" }
+                });
 
-            var result = _tests.GetElephant(validElephantId);
+            ElephantService _tests = new ElephantService(mockElephantRepo.Object);
 
-            Assert.Equal(validElephantId, result.id);
+            // act
+            var result = await _tests.GetAll();
+
+            // assert
+            Assert.Equal(totalElephantsLength, result.Count);
         }
     }
 }

@@ -1,3 +1,4 @@
+using ElephantsProject.Repo;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -20,7 +21,8 @@ namespace ElephantsProject
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSingleton<IElephantService, ElephantService>();
+            services.AddTransient<IElephantService, ElephantService>();
+            services.AddSingleton<IElephantRepo, ElephantRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

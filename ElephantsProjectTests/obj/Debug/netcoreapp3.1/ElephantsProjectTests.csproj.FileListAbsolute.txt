@@ -102,3 +102,5 @@
 /Users/melissaastbury/Documents/Study/Apprenticeship/CSharp/ElephantsProject/ElephantsProjectTests/obj/Debug/netcoreapp3.1/ElephantsProjectTests.dll
 /Users/melissaastbury/Documents/Study/Apprenticeship/CSharp/ElephantsProject/ElephantsProjectTests/obj/Debug/netcoreapp3.1/ElephantsProjectTests.pdb
 /Users/melissaastbury/Documents/Study/Apprenticeship/CSharp/ElephantsProject/ElephantsProjectTests/obj/Debug/netcoreapp3.1/ElephantsProjectTests.genruntimeconfig.cache
+/Users/melissaastbury/Documents/Study/Apprenticeship/CSharp/ElephantsProject/ElephantsProjectTests/bin/Debug/netcoreapp3.1/Castle.Core.dll
+/Users/melissaastbury/Documents/Study/Apprenticeship/CSharp/ElephantsProject/ElephantsProjectTests/bin/Debug/netcoreapp3.1/Moq.dll

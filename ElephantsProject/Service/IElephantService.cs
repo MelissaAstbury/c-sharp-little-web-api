@@ -1,15 +1,16 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ElephantsProject
 {
     public interface IElephantService
     {
-        List<Elephant> GetElephants();
+        Task<List<Elephant>> GetAll();
 
-        Elephant GetElephant(string id);
+        Task<Elephant> Get(string id);
 
-        Elephant AddElephant(Elephant elephant);
+        Task<Elephant> Add(Elephant elephant);
 
-        Elephant DeleteElephant(string id);
+        Task<Elephant> Delete(string id);
     }
 }
