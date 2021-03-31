@@ -26,6 +26,7 @@ namespace ElephantsTests
 
             // assert
             Assert.Equal(totalElephantsLength, result.Count);
+            mockElephantRepo.VerifyAll();
         }
 
 
@@ -48,6 +49,47 @@ namespace ElephantsTests
 
             // assert
             Assert.Equal(totalElephantsLength, result.Count);
+            mockElephantRepo.VerifyAll();
         }
+
+
+        [Fact]
+        public async Task Get_ReturnsElephantById()
+        {
+            var expectedId = "12345";
+            var mockElephantRepo = new Mock<IElephantRepo>();
+            mockElephantRepo.Setup(x => x.Get(expectedId)).ReturnsAsync(
+                new Elephant() { id = "12345" }
+                );
+
+            ElephantService _tests = new ElephantService(mockElephantRepo.Object);
+
+            var result = await _tests.Get(expectedId);
+
+            Assert.Equal(expectedId, result.id);
+            mockElephantRepo.VerifyAll();
+        }
+
+
+        [Fact]
+        public async Task Get_ReturnsNullWhenIdIsNotFound()
+        {
+            var inputId = "67890";
+            Elephant elephantResult = null;
+            var mockElephantRepo = new Mock<IElephantRepo>();
+            mockElephantRepo.Setup(x => x.Get(inputId)).ReturnsAsync(
+                elephantResult
+                );
+
+            ElephantService _tests = new ElephantService(mockElephantRepo.Object);
+
+            var result = await _tests.Get(inputId);
+
+            Assert.Null(result);
+            mockElephantRepo.VerifyAll();
+        }
+
+
+        
     }
 }

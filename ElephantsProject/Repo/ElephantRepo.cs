@@ -11,21 +11,22 @@ namespace ElephantsProject.Repo
     {
         public ElephantRepo()
         {
-            //string elephants = File.ReadAllText("./Elephants.json");
-            //var listOfElephants = JsonConvert.DeserializeObject<List<Elephant>>(elephants);
+            //string fileOfElephants = File.ReadAllText("./Elephants.json");
+            //var elephants = JsonConvert.DeserializeObject<List<Elephant>>(elephants);
         }
 
         public async Task<List<Elephant>> GetAll()
         {
-            var elephants = File.ReadAllText("./Elephants.json");
-            return await Task.Run(() => JsonConvert.DeserializeObject<List<Elephant>>(elephants));
+            var fileOfElephants = File.ReadAllText("./Elephants.json");
+            return await Task.Run(() => JsonConvert.DeserializeObject<List<Elephant>>(fileOfElephants));
         }
 
         public async Task<Elephant> Get(string id)
         {
             var fileOfElephants = File.ReadAllText("./Elephants.json");
             var elephants = await Task.Run(() => JsonConvert.DeserializeObject<List<Elephant>>(fileOfElephants));
-            return elephants.First(e => e.id == id);
+            var result = elephants.FirstOrDefault(e => e.id == id);
+            return result;
         }
 
         public async Task<Elephant> Add(Elephant elephant)

@@ -2,13 +2,14 @@
   <MonoDevelop.Ide.ItemProperties.ElephantsProject PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ElephantsProject/Service/ElephantService.cs">
     <Files>
-      <File FileName="ElephantsProject/Service/ElephantService.cs" Line="25" Column="1" />
+      <File FileName="ElephantsProject/Service/ElephantService.cs" Line="29" Column="10" />
       <File FileName="ElephantsProject/Service/IElephantService.cs" Line="17" Column="1" />
-      <File FileName="ElephantsProjectTests/ElephantsTests.cs" Line="9" Column="1" />
       <File FileName="ElephantsProject/Elephant.cs" Line="1" Column="1" />
-      <File FileName="ElephantsProject/Repo/IElephantRepo.cs" Line="15" Column="2" NotebookId="1" />
-      <File FileName="ElephantsProject/Repo/ElephantRepo.cs" Line="22" Column="10" NotebookId="1" />
-      <File FileName="ElephantsProject/Controllers/ElephantController.cs" Line="40" Column="20" NotebookId="1" />
+      <File FileName="ElephantsProject/Controllers/ElephantController.cs" Line="44" Column="1" />
+      <File FileName="ElephantsProject/Repo/IElephantRepo.cs" Line="14" Column="1" NotebookId="1" />
+      <File FileName="ElephantsProject/Repo/ElephantRepo.cs" Line="29" Column="1" NotebookId="1" />
+      <File FileName="ElephantsProjectTests/ElephantsTests.cs" Line="89" Column="42" NotebookId="1" />
+      <File FileName="ElephantsProject/Elephants.json" Line="1" Column="1" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -49,7 +50,10 @@
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/melissaastbury/Documents/Study/Apprenticeship/CSharp/ElephantsProject/ElephantsProject/Service/ElephantService.cs" relfile="ElephantsProject/Service/ElephantService.cs" line="28" column="1" />
+      <Breakpoint file="/Users/melissaastbury/Documents/Study/Apprenticeship/CSharp/ElephantsProject/ElephantsProject/Controllers/ElephantController.cs" relfile="ElephantsProject/Controllers/ElephantController.cs" line="44" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

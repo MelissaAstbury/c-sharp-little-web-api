@@ -38,9 +38,15 @@ namespace ElephantsProject.Controllers
 
         [HttpGet]
         [Route("elephant/{id}")]
-        public async Task<IActionResult> Get(string id)
+        public async Task<IActionResult> Get(Guid id)
         {
-            return Ok(await _elephantService.Get(id));
+            var elephant = await _elephantService.Get(id.ToString());
+            if (elephant == null)
+            {
+                return NotFound();
+            }
+            
+            return Ok(elephant);
         }
 
 
@@ -54,9 +60,9 @@ namespace ElephantsProject.Controllers
 
         [HttpDelete]
         [Route("elephant/{id}")]
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Delete(Guid id)
         {
-            return Ok(await _elephantService.Delete(id));
+            return Ok(await _elephantService.Delete(id.ToString()));
         }
     }
 }
