@@ -62,7 +62,13 @@ namespace ElephantsProject.Controllers
         [Route("elephant/{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
-            return Ok(await _elephantService.Delete(id.ToString()));
+            var elephant = await _elephantService.Delete(id.ToString());
+            if (elephant == null)
+            {
+                throw new NullReferenceException("Elephant not found");
+            }
+
+            return Ok(elephant);
         }
     }
 }

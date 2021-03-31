@@ -8,8 +8,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace ElephantsTests
-{ 
-    public class ElephantTests 
+{
+    public class ElephantServiceTests
     {
         [Fact]
         public async Task GetAll_ReturnsNoElephants()
@@ -22,7 +22,7 @@ namespace ElephantsTests
             ElephantService _tests = new ElephantService(mockElephantRepo.Object);
 
             // act
-            var result =  await _tests.GetAll();
+            var result = await _tests.GetAll();
 
             // assert
             Assert.Equal(totalElephantsLength, result.Count);
@@ -90,6 +90,49 @@ namespace ElephantsTests
         }
 
 
+        [Fact]
+        public async Task Delete_ReturnsDeletedElephantById()
+        {
+            var expectedId = "12345";
+            var mockElephantRepo = new Mock<IElephantRepo>();
+            mockElephantRepo.Setup(x => x.Delete(expectedId)).ReturnsAsync(
+                new Elephant() { id = "12345" }
+                );
+
+            ElephantService _tests = new ElephantService(mockElephantRepo.Object);
+
+            var result = await _tests.Delete(expectedId);
+
+            Assert.Equal(expectedId, result.id);
+            mockElephantRepo.VerifyAll();
+        }
+
+
+        [Fact]
+        public async Task Delete_ReturnsNullWhenIdIsNotFound()
+        {
+            var inputId = "67890";
+            Elephant elephantResult = null;
+            var mockElephantRepo = new Mock<IElephantRepo>();
+            mockElephantRepo.Setup(x => x.Delete(inputId)).ReturnsAsync(
+                elephantResult
+                );
+
+            ElephantService _tests = new ElephantService(mockElephantRepo.Object);
+
+            var result = await _tests.Delete(inputId);
+
+            Assert.Null(result);
+            mockElephantRepo.VerifyAll();
+
+            //var expectedException = await Assert.ThrowsAsync<NullReferenceException>(() => _tests.Delete(inputId));
+            //Assert.Equal("Elephant not found", expectedException.Message);
+
+            //mockElephantRepo.VerifyAll();
+        }
+
+
         
+    
     }
 }

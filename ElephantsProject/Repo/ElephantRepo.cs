@@ -42,7 +42,11 @@ namespace ElephantsProject.Repo
         {
             var fileOfElephants = File.ReadAllText("./Elephants.json");
             var elephants = await Task.Run(() => JsonConvert.DeserializeObject<List<Elephant>>(fileOfElephants));
-            var elephantToRemove = elephants.First(e => e.id == id);
+            var elephantToRemove = elephants.FirstOrDefault(e => e.id == id);
+            if (elephantToRemove == null)
+            {
+                return null;
+            }
             elephants.Remove(elephantToRemove);
             return elephantToRemove;
         }
