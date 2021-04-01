@@ -1,11 +1,11 @@
-using System;
 using ElephantsProject;
 using ElephantsProject.Repo;
-using Microsoft.AspNetCore.Mvc;
 using Xunit;
 using Moq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
+using System;
 
 namespace ElephantsTests
 {
@@ -131,8 +131,24 @@ namespace ElephantsTests
             //mockElephantRepo.VerifyAll();
         }
 
+        [Fact]
+        public async Task Post_ReturnsAddedElephantToListOfElephants()
+        {
+            var newElephant = new Elephant() { name = "Andrew" };
+            var returnedElephant = newElephant;
+            returnedElephant.id = Guid.NewGuid().ToString();
 
-        
-    
+            var mockElephantRepo = new Mock<IElephantRepo>();
+            mockElephantRepo.Setup(x => x.Add(newElephant)).ReturnsAsync(
+                returnedElephant
+                );
+
+            ElephantService _tests = new ElephantService(mockElephantRepo.Object);
+
+            var result = await _tests.Add(newElephant);
+
+            Assert.Equal(newElephant.name, result.name);
+            Assert.NotNull(result.id);
+        }
     }
 }

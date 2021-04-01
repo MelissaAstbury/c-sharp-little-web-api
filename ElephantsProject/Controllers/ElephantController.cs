@@ -31,7 +31,7 @@ namespace ElephantsProject.Controllers
         [Route("greeting")]
         public string Get()
         {
-            DateTime timeStamp = DateTime.Now;
+            DateTime timeStamp = DateTime.UtcNow;
             return $"{timeStamp} Hello Elephants";
         }
 
