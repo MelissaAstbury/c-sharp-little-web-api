@@ -7,7 +7,7 @@ namespace ElephantsProject
     {
         public string id { get; set; }
 
-        [StringLength(25, MinimumLength = 3)]
+        [StringLength(25, MinimumLength = 1)]
         public string name { get; set; }
 
         [Required]
@@ -16,15 +16,13 @@ namespace ElephantsProject
         [Required]
         public string sex { get; set; }
 
-        [Range(1800, 2021)]
+        [Range(1950, 2021)]
         public int dob { get; set; }
 
         public int dod { get; set; }
 
-        [StringLength(150, MinimumLength = 3)]
         public string wikilink { get; set; }
 
-        [StringLength(250, MinimumLength = 2)]
         public string note { get; set; }
     }
 }
