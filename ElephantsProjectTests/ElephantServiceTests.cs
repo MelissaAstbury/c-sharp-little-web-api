@@ -123,12 +123,8 @@ namespace ElephantsTests
 
             Assert.Null(result);
             mockElephantRepo.VerifyAll();
-
-            //var expectedException = await Assert.ThrowsAsync<NullReferenceException>(() => _tests.Delete(inputId));
-            //Assert.Equal("Elephant not found", expectedException.Message);
-
-            //mockElephantRepo.VerifyAll();
         }
+
 
         [Fact]
         public async Task Post_ReturnsAddedElephantToListOfElephants()

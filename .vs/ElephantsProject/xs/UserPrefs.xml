@@ -2,13 +2,9 @@
   <MonoDevelop.Ide.ItemProperties.ElephantsProject PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ElephantsProject/Controllers/ElephantController.cs">
     <Files>
-      <File FileName="ElephantsProject/Service/ElephantService.cs" Line="24" Column="48" />
-      <File FileName="ElephantsProject/Service/IElephantService.cs" Line="12" Column="22" />
-      <File FileName="ElephantsProject/Elephant.cs" Line="8" Column="26" />
+      <File FileName="ElephantsProjectTests/ElephantControllerTests.cs" Line="111" Column="76" />
+      <File FileName="ElephantsProjectTests/ElephantServiceTests.cs" Line="118" Column="19" />
       <File FileName="ElephantsProject/Controllers/ElephantController.cs" Line="1" Column="1" />
-      <File FileName="ElephantsProject/Repo/ElephantRepo.cs" Line="36" Column="27" NotebookId="1" />
-      <File FileName="ElephantsProjectTests/ElephantServiceTests.cs" Line="139" Column="61" NotebookId="1" />
-      <File FileName="ElephantsProject/Repo/IElephantRepo.cs" Line="12" Column="22" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,9 +14,6 @@
               <Node name="Controllers" expanded="True">
                 <Node name="ElephantController.cs" selected="True" />
               </Node>
-              <Node name="Properties" expanded="True" />
-              <Node name="Repo" expanded="True" />
-              <Node name="Service" expanded="True" />
             </Node>
             <Node name="ElephantsProjectTests" expanded="True" />
           </Node>
@@ -31,8 +24,8 @@
           <Node name="ElephantsProject" expanded="True">
             <Node name="ElephantsProjectTests" expanded="True">
               <Node name="ElephantsTests" expanded="True">
-                <Node name="ElephantServiceTests" expanded="True">
-                  <Node name="Post_ReturnsAddedElephantToListOfElephants" selected="True" />
+                <Node name="ElephantControllerTests" expanded="True">
+                  <Node name="Delete_GivenEmptyElephantId_Return400" selected="True" />
                 </Node>
               </Node>
             </Node>

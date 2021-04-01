@@ -16,6 +16,7 @@ namespace ElephantsProject.Controllers
             _elephantService = elephantService;
         }
 
+
         [HttpGet]
         [Route("all")]
         public async Task<IActionResult> GetAll()
