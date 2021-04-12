@@ -11,8 +11,7 @@ namespace ElephantsProject.Repo
     {
         public ElephantRepo()
         {
-            //string fileOfElephants = File.ReadAllText("./Elephants.json");
-            //var elephants = JsonConvert.DeserializeObject<List<Elephant>>(elephants);
+
         }
 
         public async Task<List<Elephant>> GetAll()
@@ -23,25 +22,22 @@ namespace ElephantsProject.Repo
 
         public async Task<Elephant> Get(string id)
         {
-            var fileOfElephants = File.ReadAllText("./Elephants.json");
-            var elephants = await Task.Run(() => JsonConvert.DeserializeObject<List<Elephant>>(fileOfElephants));
+            var elephants = await GetAll();
             var result = elephants.FirstOrDefault(e => e.id == id);
             return result;
         }
 
         public async Task<Elephant> Add(Elephant elephant)
         {
-            var fileOfElephants = File.ReadAllText("./Elephants.json");
-            var elephants = await Task.Run(() => JsonConvert.DeserializeObject<List<Elephant>>(fileOfElephants));
+            var elephants = await GetAll();
             elephant.id = Guid.NewGuid().ToString();
             elephants.Add(elephant);
             return elephant;
         }
 
         public async Task<Elephant> Delete(string id)
-        {
-            var fileOfElephants = File.ReadAllText("./Elephants.json");
-            var elephants = await Task.Run(() => JsonConvert.DeserializeObject<List<Elephant>>(fileOfElephants));
+        { 
+            var elephants = await GetAll();
             var elephantToRemove = elephants.FirstOrDefault(e => e.id == id);
             if (elephantToRemove == null)
             {
