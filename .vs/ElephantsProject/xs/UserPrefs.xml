@@ -2,12 +2,10 @@
   <MonoDevelop.Ide.ItemProperties.ElephantsProject PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ElephantsProject/Repo/ElephantRepo.cs">
     <Files>
-      <File FileName="ElephantsProjectTests/ElephantControllerTests.cs" Line="121" Column="62" />
-      <File FileName="ElephantsProjectTests/ElephantServiceTests.cs" Line="118" Column="19" />
-      <File FileName="ElephantsProject/Controllers/ElephantController.cs" Line="25" Column="45" />
-      <File FileName="ElephantsProject/Service/ElephantService.cs" Line="17" Column="21" />
-      <File FileName="ElephantsProject/Service/IElephantService.cs" Line="8" Column="13" />
-      <File FileName="ElephantsProject/Repo/ElephantRepo.cs" Line="15" Column="91" />
+      <File FileName="ElephantsProject/Service/ElephantService.cs" Line="1" Column="1" />
+      <File FileName="ElephantsProject/Service/IElephantService.cs" Line="1" Column="1" />
+      <File FileName="ElephantsProject/Elephant.cs" Line="1" Column="1" />
+      <File FileName="ElephantsProject/Repo/ElephantRepo.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -26,10 +24,12 @@
       </Pad>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
-          <Node name="ElephantsProject" expanded="True" selected="True">
+          <Node name="ElephantsProject" expanded="True">
             <Node name="ElephantsProjectTests" expanded="True">
               <Node name="ElephantsTests" expanded="True">
-                <Node name="ElephantControllerTests" expanded="True" />
+                <Node name="ElephantControllerTests" expanded="True">
+                  <Node name="GetAll_Returns200" selected="True" />
+                </Node>
                 <Node name="ElephantServiceTests" expanded="True" />
               </Node>
             </Node>
